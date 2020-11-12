@@ -27,6 +27,13 @@ function Posts({ posts }) {
           <code>.env.local</code> will always override env variables defined in
           other <i>env</i> files.
         </li>
+        <li>
+          Var created with <code>NEXT_PUBLIC_</code> will be exposed to browser.
+          Nextjs will inline the value in JS sent to client.
+          <br />
+          This value is inlined by NEXTjs:{" "}
+          <b>{process.env.NEXT_PUBLIC_BROWSER_VAR}</b>.
+        </li>
       </ul>
       <ul
         style={{
