@@ -10,8 +10,11 @@ const style = {
 function HomePage() {
   return (
     <div>
-      This has no data requirement (missing getIntialProps/getServerSideProps)
-      so it will be generated statically automatically by NextJs
+      <h1>
+        This page has no data requirement (missing
+        getIntialProps/getServerSideProps) so it will be generated statically
+        automatically by NextJs
+      </h1>
       <nav>
         <ul style={{ display: "flex", listStyle: "none" }}>
           <li>
