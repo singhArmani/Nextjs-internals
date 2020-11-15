@@ -1,4 +1,9 @@
 import Link from "next/link";
+import { initializeApollo } from "../lib/apolloClient";
+import {
+  PostWithApollo,
+  ALL_POSTS_QUERY,
+} from "../components/postListWithApollo";
 
 const style = {
   padding: "2rem",
@@ -34,8 +39,26 @@ function HomePage() {
           </li>
         </ul>
       </nav>
+      <h2>The following posts are fetched using Apollo client</h2>
+      <PostWithApollo />
     </div>
   );
+}
+
+export async function getStaticProps() {
+  const apolloClient = initializeApollo();
+
+  await apolloClient.query({
+    query: ALL_POSTS_QUERY,
+    variables: { first: 10, skip: 0 },
+  });
+
+  return {
+    props: {
+      initialApolloState: apolloClient.cache.extract(),
+    },
+    revalidate: 1,
+  };
 }
 
 export default HomePage;
