@@ -37,6 +37,11 @@ function HomePage() {
               <a style={style}>Contact</a>
             </Link>
           </li>
+          <li>
+            <Link href="/books">
+              <a style={style}>Books</a>
+            </Link>
+          </li>
         </ul>
       </nav>
       <h2>The following posts are fetched using Apollo client</h2>
