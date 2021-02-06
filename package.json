@@ -1,7 +1,10 @@
 {
+  "license": "MIT",
+  "author": "Amandeep Singh <amanexplains.com> (https://amanexplains.com/)",
   "scripts": {
     "dev": "yarn next dev",
-    "test": "yarn test"
+    "test": "yarn jest --coverage",
+    "test:watch": "yarn jest --watch"
   },
   "dependencies": {
     "@apollo/client": "^3.2.5",
@@ -14,15 +17,26 @@
     "swr": "^0.3.8"
   },
   "devDependencies": {
+    "@babel/preset-env": "^7.12.13",
+    "@babel/preset-react": "^7.12.13",
+    "@testing-library/dom": "^7.29.4",
     "@testing-library/jest-dom": "^5.11.9",
     "@testing-library/react": "^11.2.5",
+    "@testing-library/user-event": "^12.6.3",
+    "babel-eslint": "^10.1.0",
+    "babel-jest": "^26.6.3",
     "eslint": "^7.19.0",
+    "eslint-config-airbnb": "^18.2.1",
+    "eslint-config-prettier": "^7.2.0",
     "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-jest-dom": "^3.6.5",
     "eslint-plugin-jsx-a11y": "^6.4.1",
     "eslint-plugin-react": "^7.22.0",
     "eslint-plugin-react-hooks": "^4.2.0",
+    "eslint-plugin-testing-library": "^3.10.1",
     "jest": "^26.6.3",
     "jest-axe": "^4.1.0",
-    "jest-watch-typeahead": "^0.6.1"
+    "jest-watch-typeahead": "^0.6.1",
+    "prettier": "^2.2.1"
   }
 }
