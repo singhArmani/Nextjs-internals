@@ -1,3 +1,4 @@
+import React from "react";
 import useSWR from "swr";
 import Loading from "../components/loading";
 
@@ -17,7 +18,7 @@ export default function Dashboard() {
   return (
     <div>
       <h1>
-        This page is rendered client side with useSWR. The user we're fetching
+        This page is rendered client side with useSWR. The user we are fetching
         is {data.name.toUpperCase()}.
       </h1>
     </div>

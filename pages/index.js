@@ -1,4 +1,6 @@
+import React from "react";
 import Link from "next/link";
+
 import { initializeApollo } from "../lib/apolloClient";
 import {
   PostWithApollo,

@@ -1,3 +1,5 @@
+import React from "react";
+
 import Link from "next/link";
 function Books({ books }) {
   return (
@@ -14,7 +16,6 @@ function Books({ books }) {
 }
 
 export async function getStaticProps() {
-  // Make an api call to the name
   const res = await fetch("http://localhost:8080/books");
   const books = await res.json();
   return {

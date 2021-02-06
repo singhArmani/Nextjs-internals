@@ -1,12 +1,14 @@
+import React from "react";
+
 function Posts({ posts }) {
   return (
     <div>
       <h2>
         This Posts page users <code>.env.local</code> file to consume{" "}
         <b>Environment variable</b>.<br />
-        <br /> We're goint to statically generate this page by making a fake API
-        call inside <code>getStaticProps</code>. Important thing to remember is
-        that we can make calls to database directly into{" "}
+        <br /> We are goint to statically generate this page by making a fake
+        API call inside <code>getStaticProps</code>. Important thing to remember
+        is that we can make calls to database directly into{" "}
         <code>getStaticProps</code> call.
       </h2>
       <h3>

@@ -1,3 +1,5 @@
+import React from "react";
+
 function About({ name }) {
   return (
     <h1>
