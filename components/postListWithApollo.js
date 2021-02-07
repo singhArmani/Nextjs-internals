@@ -1,25 +1,18 @@
-import { gql, useQuery } from "@apollo/client";
-import Users from "./user";
-import Loading from "./loading";
+import { gql, useQuery } from '@apollo/client';
+import Loading from './loading';
 
 export const ALL_POSTS_QUERY = gql`
   query allPosts($first: Int!, $skip: Int!) {
-    allPosts(orderBy: { createdAt: desc }, first: $first, skip: $skip) {
+    allPosts(first: $first, skip: $skip) {
       id
       title
-      votes
-      url
-      createdAt
-    }
-    _allPostsMeta {
-      count
     }
   }
 `;
 
 export const PostWithApollo = () => {
   const { data, error, loading } = useQuery(ALL_POSTS_QUERY, {
-    variables: { first: 10, skip: 0 },
+    variables: { first: 2, skip: 0 },
   });
 
   if (loading) return <Loading />;
@@ -30,12 +23,11 @@ export const PostWithApollo = () => {
 
   return (
     <section>
-      <ul>
+      <ul aria-label="list of blog posts">
         {allPosts.map((post) => (
           <li key={post.id}>{post.title}</li>
         ))}
       </ul>
-      <Users />
     </section>
   );
 };
